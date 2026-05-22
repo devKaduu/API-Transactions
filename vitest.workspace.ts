@@ -8,7 +8,7 @@ export default defineWorkspace([
       name: "e2e",
       environment: "node",
       setupFiles: ["./setup.node.ts"],
-      include: ["test/e2e/*.{test,spec}.ts"],
+      include: ["test/*.{test,spec}.ts"],
     },
   },
 ]);
