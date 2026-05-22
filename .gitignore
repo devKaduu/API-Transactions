@@ -1,5 +1,11 @@
+# Dependencies
 node_modules
-temp/app.db
+# Environment variables
 .env
 .env.test
+# Database files
+prisma/*.db
+# OS files
 .DS_Store
+# Build files
+build
