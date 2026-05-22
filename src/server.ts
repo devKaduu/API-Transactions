@@ -1,5 +1,5 @@
 import { app } from "./app";
 
-app.listen({ port: 3333 }).then(() => {
+app.listen({ port: Number(process.env.PORT) }).then(() => {
   console.log("HTTP Server Running!");
 });
