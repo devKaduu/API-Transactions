@@ -4,8 +4,7 @@ node_modules
 .env
 .env.test
 .env.*
-# Database files
-prisma/*.db
+!.env.example
 # OS files
 .DS_Store
 # Build files

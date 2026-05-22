@@ -6,12 +6,12 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "start": "tsx src/server.ts",
-    "build": "DATABASE_PROVIDER=pg node scripts/run-prisma.mjs generate && DATABASE_PROVIDER=pg node scripts/run-prisma.mjs migrate deploy",
+    "build": "prisma generate && prisma migrate deploy",
     "test": "vitest",
-    "postinstall": "node scripts/run-prisma.mjs generate",
-    "prisma:generate": "node scripts/run-prisma.mjs generate",
-    "prisma:migrate:dev": "node scripts/run-prisma.mjs migrate dev",
-    "prisma:migrate:deploy": "node scripts/run-prisma.mjs migrate deploy"
+    "postinstall": "prisma generate",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate:dev": "prisma migrate dev",
+    "prisma:migrate:deploy": "prisma migrate deploy"
   },
   "keywords": [],
   "author": "",
@@ -34,7 +34,6 @@
     "fastify-type-provider-zod": "^4.0.2",
     "pg": "^8.14.1",
     "prisma": "^6.6.0",
-    "sqlite3": "^5.1.7",
     "zod": "^3.24.2"
   }
 }
