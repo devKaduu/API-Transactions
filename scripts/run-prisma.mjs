@@ -6,7 +6,22 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 const schemaPath = path.join(root, "prisma/schema.prisma");
-const provider = process.env.DATABASE_PROVIDER || "sqlite";
+
+/** Aceita pg/postgres no Render; o Prisma só entende "postgresql" no schema. */
+function normalizeProvider(value) {
+  const raw = (value || "sqlite").toLowerCase().trim();
+  if (raw === "pg" || raw === "postgres" || raw === "postgresql") {
+    return "postgresql";
+  }
+  if (raw === "sqlite") {
+    return "sqlite";
+  }
+  throw new Error(
+    `DATABASE_PROVIDER inválido: "${value}". Use sqlite, pg ou postgresql.`,
+  );
+}
+
+const provider = normalizeProvider(process.env.DATABASE_PROVIDER);
 
 const args = process.argv.slice(2);
 if (args.length === 0) {

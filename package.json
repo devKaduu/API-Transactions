@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "start": "tsx src/server.ts",
-    "build": "DATABASE_PROVIDER=postgresql node scripts/run-prisma.mjs generate && DATABASE_PROVIDER=postgresql node scripts/run-prisma.mjs migrate deploy",
+    "build": "DATABASE_PROVIDER=pg node scripts/run-prisma.mjs generate && DATABASE_PROVIDER=pg node scripts/run-prisma.mjs migrate deploy",
     "test": "vitest",
     "postinstall": "node scripts/run-prisma.mjs generate",
     "prisma:generate": "node scripts/run-prisma.mjs generate",
