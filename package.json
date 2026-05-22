@@ -34,8 +34,8 @@
     "fastify": "^5.2.2",
     "fastify-type-provider-zod": "^4.0.2",
     "pg": "^8.14.1",
-    "prisma": "^6.19.0",
-    "@prisma/client": "^6.19.0",
+    "prisma": "6.19.3",
+    "@prisma/client": "6.19.3",
     "tsx": "^4.19.3",
     "zod": "^3.24.2"
   }
